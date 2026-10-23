@@ -12,6 +12,8 @@ Copy-Item .env.example .env
 
 Abra o `.env` e preencha **uma** das credenciais do TMDB (`TMDB_API_KEY` ou `TMDB_ACCESS_TOKEN`). Depois, inicie o projeto:
 
+Só um detalhe: não incluí a chave da API diretamente no projeto para seguir boas práticas de segurança e evitar expor credenciais no repositório. Para executar a aplicação, é necessário configurar uma chave própria do TMDB.
+
 ```powershell
 docker compose up --build
 ```
@@ -60,12 +62,10 @@ Abra o endereço que o Vite mostrar, normalmente [http://localhost:5173](http://
 
 - Filtros por gênero ou ano, autenticação e cache. São recursos bônus e não foram implementados.
 - O site não foi publicado num serviço de hospedagem; a entrega é o repositório público do GitHub e a execução local pelo Docker.
-- Falta conferir a atribuição do TMDB e incluir o logo oficial exigido por eles; também falta colocar no site o crédito do ícone da Flaticon.
 
 Para usar a busca, é preciso configurar uma credencial TMDB no `.env`. Ela não acompanha o projeto nem deve ser publicada.
 
 ## Uso de IA
 
-Usei ChatGPT/Codex como apoio na criação e organização do código, na documentação e na configuração do Docker. Revisei e adaptei o projeto e estou conferindo os fluxos antes da entrega.
+Usei o Lovable para me apoiar na construção do esqueleto da pagina de filmes e layout, e ChatGPT/Codex como apoio na validação do meu pseudocódigo, criação e organização do código na documentação e na configuração do Docker. Revisei e adaptei o projeto conforme o pedido no teste.
 
-Este produto usa a API do TMDB, mas não é endossado nem certificado pelo TMDB.
