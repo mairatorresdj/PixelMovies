@@ -1,0 +1,600 @@
+/* Tema, cores e estilos base */
+:root {
+  font-family: Inter,Arial,sans-serif;
+  color: #e0e1dd;
+  background: #0d1b2a;
+  font-synthesis: none;
+  --muted: #aab9cc;
+  --line: #415a77;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,input {
+  font: inherit;
+}
+button,a,input {
+  outline-offset: 5px;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+  border: 1px solid var(--line);
+  background: #1b263b;
+  border-radius: 8px;
+  padding: 11px 17px;
+  transition: background .15s,transform .15s;
+}
+button:hover {
+  background: #415a77;
+}
+button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+a {
+  color: inherit;
+}
+/* Topo e navegação */
+header {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27px 40px;
+  border-bottom: 1px solid #26384f;
+}
+.brand {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+}
+.brand>span:not(.brand-icon) {
+  font-weight: 400;
+}
+.brand-icon {
+  color: #aab9cc;
+  margin-right: 10px;
+  font-size: 32px;
+}
+.brand-dot {
+  color: #778da9;
+}
+nav {
+  display: flex;
+  gap: 8px;
+}
+nav button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+}
+nav button.active {
+  background: #1b263b;
+  color: #e0e1dd;
+}
+.badge {
+  display: inline-block;
+  background: #415a77;
+  border-radius: 5px;
+  padding: 2px 6px;
+  margin-left: 5px;
+  font-size: 11px;
+}
+/* Conteúdo principal e busca */
+main {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 40px;
+}
+.hero {
+  padding: 66px 0 52px;
+  position: relative;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.4px;
+  color: #aab9cc;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+h1 {
+  font-size: clamp(36px,5.5vw,65px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin: 0 0 21px;
+  font-weight: 700;
+}
+h1 span {
+  color: #778da9;
+}
+.intro {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 570px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #1b263b;
+  border: 1px solid #415a77;
+  border-radius: 10px;
+  padding: 7px 8px 7px 19px;
+  max-width: 690px;
+  margin-top: 31px;
+}
+.search>span {
+  font-size: 29px;
+  color: #aab9cc;
+}
+.search input {
+  min-width: 0;
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: #e0e1dd;
+  padding: 12px 0;
+  font-size: 15px;
+}
+.search input::placeholder {
+  color: #aab9cc;
+}
+.primary {
+  background: #e0e1dd;
+  color: #0d1b2a;
+  border-color: #e0e1dd;
+  font-weight: 700;
+}
+.primary:hover {
+  background: #bdc8d1;
+}
+.search button {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.catalog {
+  border-top: 1px solid #26384f;
+  padding: 31px 0 50px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.section-heading .eyebrow {
+  margin-bottom: 9px;
+}
+h2 {
+  font-size: 25px;
+  letter-spacing: -.5px;
+  margin: 0;
+}
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+/* Catálogo e cartões de filmes */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 30px 22px;
+}
+.movie-card {
+  display: block;
+  text-align: left;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  min-width: 0;
+}
+.movie-card:hover {
+  background: transparent;
+  transform: translateY(-4px);
+}
+.poster {
+  aspect-ratio: 2/3;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #1b263b;
+  border: 1px solid #2c3d53;
+}
+.poster img,.detail-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.movie-card h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 12px 0 5px;
+}
+.movie-card p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+.no-poster {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #aab9cc;
+  padding: 20px;
+  text-align: center;
+}
+.no-poster>span {
+  font-size: 45px;
+}
+.no-poster small {
+  font-size: 12px;
+}
+.score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #0d1b2aee;
+  padding: 6px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.poster-action {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 12px 14px;
+  background: linear-gradient(transparent,#0d1b2a);
+  opacity: 0;
+  font-size: 12px;
+}
+.movie-card:hover .poster-action,.movie-card:focus-visible .poster-action {
+  opacity: 1;
+}
+.card-stars {
+  color: #e0e1dd;
+  letter-spacing: 1px;
+}
+.empty,.status {
+  text-align: center;
+  padding: 65px 20px;
+  background: #142237;
+  border: 1px dashed #415a77;
+  border-radius: 10px;
+}
+.empty>span {
+  font-size: 35px;
+  color: #778da9;
+}
+.empty h3 {
+  font-size: 20px;
+}
+.empty p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.status {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #415a77;
+  border-top-color: #e0e1dd;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+/* Movimento do indicador enquanto a página carrega */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 13px;
+}
+.pagination span {
+  color: var(--muted);
+}
+footer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 0;
+  border-top: 1px solid #26384f;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.footer-brand {
+  font-size: 17px;
+  color: #e0e1dd;
+  font-weight: 700;
+}
+footer p {
+  margin: 7px 0;
+}
+/* Modal de detalhes e avaliações */
+dialog {
+  background: #1b263b;
+  color: #e0e1dd;
+  border: 1px solid #415a77;
+  border-radius: 14px;
+  width: min(900px,94vw);
+  max-height: 90vh;
+  padding: 40px;
+  box-shadow: 0 20px 90px #0008;
+}
+dialog::backdrop {
+  background: #06101bcf;
+  backdrop-filter: blur(5px);
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  border: 0;
+  font-size: 25px;
+  padding: 2px 10px;
+  z-index: 1;
+}
+.details {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 30px;
+}
+.detail-poster {
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #0d1b2a;
+}
+.details h2 {
+  font-size: 29px;
+  margin-bottom: 13px;
+}
+.details h3 {
+  font-size: 14px;
+  margin: 23px 0 9px;
+}
+.details .eyebrow {
+  font-size: 9px;
+  margin-bottom: 11px;
+}
+.synopsis,.cast {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #d0d6de;
+}
+.cast {
+  font-size: 12px;
+}
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 15px 0;
+}
+.genres span {
+  border: 1px solid #415a77;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 5px 8px;
+}
+.rating-box {
+  margin-top: 25px;
+  border-top: 1px solid #415a77;
+}
+.rating-box p {
+  margin: 0;
+}
+.stars {
+  display: flex;
+  margin: 12px 0;
+}
+.stars button {
+  padding: 3px 6px;
+  background: transparent;
+  border: 0;
+  font-size: 33px;
+  color: #778da9;
+}
+.stars button.selected {
+  color: #e0e1dd;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+.text-button {
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  color: var(--muted);
+}
+.error {
+  border: 1px solid #aab9cc;
+  background: #26384f;
+  border-radius: 7px;
+  padding: 15px;
+  line-height: 1.6;
+  font-size: 13px;
+}
+.notice {
+  color: #e0e1dd;
+  padding: 12px;
+  border-left: 3px solid #aab9cc;
+  font-size: 13px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Enfeite extra para telas maiores */
+@media (min-width:1300px) {
+  .hero:after {
+    content: '▶';
+    position: absolute;
+    right: 70px;
+    top: 85px;
+    font-size: 125px;
+    color: #1b263b;
+    transform: rotate(-12deg);
+    border: 1px solid #26384f;
+    padding: 10px 50px;
+    border-radius: 28px;
+    pointer-events: none;
+  }
+}
+/* Ajusta o catálogo para telas médias */
+@media (max-width:950px) {
+  .movie-grid {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+  }
+  footer {
+    margin: 0 40px;
+  }
+  .details {
+    grid-template-columns: 180px 1fr;
+  }
+}
+/* Deixa navegação e cartões confortáveis no celular */
+@media (max-width:700px) {
+  header {
+    padding: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-size: 22px;
+  }
+  nav button {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+  main {
+    padding: 0 20px;
+  }
+  .hero {
+    padding: 40px 0 33px;
+  }
+  h1 {
+    letter-spacing: -1px;
+  }
+  .intro {
+    font-size: 14px;
+  }
+  .movie-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 25px 15px;
+  }
+  .section-heading {
+    align-items: flex-start;
+  }
+  .section-heading h2 {
+    font-size: 21px;
+  }
+  .section-heading>.muted {
+    white-space: nowrap;
+    font-size: 11px;
+  }
+  .search button {
+    gap: 10px;
+    padding: 12px;
+  }
+  .search input {
+    font-size: 13px;
+  }
+  .pagination {
+    gap: 10px;
+    font-size: 11px;
+  }
+  .pagination button {
+    padding: 10px;
+    font-size: 12px;
+  }
+  footer {
+    margin: 0 20px;
+  }
+  .details {
+    display: block;
+  }
+  .detail-poster {
+    width: 130px;
+    margin: 0 auto 25px;
+  }
+  dialog {
+    padding: 35px 22px 24px;
+  }
+  .details h2 {
+    font-size: 26px;
+  }
+}
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Ajustes da área de busca */
+.search-area {
+  margin-top: 31px;
+  max-width: 690px;
+  position: relative;
+  z-index: 1;
+}
+.search-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.search-area .search {
+  margin-top: 0;
+}
+.search-help {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 9px 0 0;
+}

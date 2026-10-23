@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      TMDB_API_KEY: ${TMDB_API_KEY:-}
+      TMDB_ACCESS_TOKEN: ${TMDB_ACCESS_TOKEN:-}
+      DATABASE_PATH: /data/movies.db
+    volumes:
+      - movies_data:/data
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  movies_data:
