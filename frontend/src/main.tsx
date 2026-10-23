@@ -332,9 +332,9 @@ function App() {
           }}
         >
           <span className="brand-icon" aria-hidden="true">
-            ▦
+            🎬
           </span>
-          pixel<span>movies</span>
+          Pixel<span>Movies</span>
           <span className="brand-dot">.</span>
         </a>
 
@@ -356,13 +356,13 @@ function App() {
 
       <main>
         <section className="hero">
-          <p className="eyebrow">SEU PEQUENO UNIVERSO DE CINEMA</p>
+          <p className="eyebrow">SEU PRÓXIMO FILME TE ESPERA</p>
           <h1>
             {tab === 'search' ? (
               <>
-                A próxima história
+                Novos Filmes,
                 <br />
-                começa <span>aqui.</span>
+                novas <span>aventuras.</span>
               </>
             ) : (
               <>
@@ -439,7 +439,7 @@ function App() {
                   : ''}
             </span>
           </div>
-
+                      
           {tab === 'search' && ratingsError && (
             <p role="alert" className="error">
               Avaliações indisponíveis: {ratingsError}{' '}
@@ -534,13 +534,13 @@ function App() {
       </main>
 
       <footer>
-        <span className="footer-brand">pixelmovies.</span>
+        <span className="footer-brand">Pixelmovies, um projeto por Maira Torres</span>
         <p>Feito para quem ama uma boa história.</p>
         <p>
           Dados e imagens:{' '}
           <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
             TMDB
-          </a>. This product uses the TMDB API but is not endorsed or certified by TMDB.
+          </a>. Este projeto utiliza a API do TMDB, mas não é endossado nem certificado pelo TMDB.
         </p>
       </footer>
 
